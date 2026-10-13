@@ -1,0 +1,21 @@
+# Fins de ligne normalisées à LF dans le dépôt, quel que soit le poste.
+* text=auto eol=lf
+
+# Les CSV sont écrits par pandas sous Windows, donc en CRLF. Les laisser convertir
+# ferait qu'un simple recalcul, à données identiques, afficherait tout le fichier
+# comme modifié. On les sort du mécanisme.
+*.csv -text
+
+# Binaires : jamais touchés.
+*.png binary
+*.pdf binary
+*.xlsx binary
+
+# Scripts Windows : CRLF, sinon cmd.exe les lit mal.
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Le site est dérivé : on ne veut pas que ses diffs encombrent une relecture.
+site/** linguist-generated=true
+data/*.csv linguist-generated=true

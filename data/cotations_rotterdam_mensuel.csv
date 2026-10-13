@@ -1,0 +1,5 @@
+produit,mois,cotation_ceur_l,provisoire,note
+gazole,2026-08-01,93.15,False,2026-09-18
+gazole,2026-09-01,108.34,True,2026-09-18
+sp95,2026-08-01,73.92,False,2026-09-18
+sp95,2026-09-01,87.87,True,2026-09-18

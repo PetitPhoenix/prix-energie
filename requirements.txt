@@ -1,0 +1,11 @@
+pandas>=2.0
+openpyxl>=3.1
+requests>=2.31
+lxml>=4.9
+# certificats TLS du magasin système (Windows/macOS)
+truststore>=0.9
+# optionnel : lecture des notes hebdomadaires DGEC (cotations Rotterdam)
+pdfplumber>=0.10
+matplotlib>=3.8
+# dev : tests de non-regression
+pytest>=8.0

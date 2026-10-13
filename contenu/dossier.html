@@ -1,0 +1,464 @@
+<section id="differences">
+  <h2>Les différences de prix constatées</h2>
+  <p class="chapo">Un litre et un kilowattheure n'ont pas de commune mesure. Le coût d'un
+  trajet identique, si : c'est par lui qu'on peut comparer les trois énergies, et c'est
+  par lui que commence ce dossier. Les consommations retenues sont des conventions,
+  modifiables plus bas.</p>
+
+  {{fig:cout_100km}}
+  {{fig:cout_100km_constants}}
+  {{fig:cout_100km_indice}}
+
+  <p>Les deux régimes de prix se distinguent à l'œil : les carburants oscillent en
+  continu, l'électricité avance par paliers, les barèmes changeant à date fixe. Partout
+  dans ce dossier,
+  un tracé en marches signale une donnée qui vaut pour toute une période (un semestre
+  chez Eurostat, une année pour le détail des composantes) et non une valeur
+  instantanée.</p>
+
+  {{calculette}}
+
+  {{limite}}
+  <p>Trois réserves. Les consommations retenues sont des conventions : elles fixent le
+  niveau des trois courbes, pas leurs évolutions, qui ne dépendent que des prix. La
+  recharge est valorisée <strong>à domicile, au tarif réglementé</strong> : sur borne
+  publique le kilowattheure est nettement plus cher et l'écart se resserre. Et le coût au
+  kilomètre ne dit rien du <strong>coût total de possession</strong> (achat, entretien,
+  assurance, décote) où le différentiel joue en sens inverse.</p>
+  {{/limite}}
+</section>
+
+<section id="unitaires">
+  <h2>L'évolution des prix unitaires</h2>
+  <p class="chapo">Cette section suit le prix dans son unité réelle : le centime par litre
+  à la pompe, le centime par kilowattheure au compteur. Chaque prix payé se décompose en
+  trois blocs dont la somme fait exactement ce prix (l'énergie hors taxes, les taxes
+  assises sur le volume, la TVA par-dessus) et les deux sous-chapitres qui suivent
+  ouvrent chacun de ces blocs. Cette section est en euros courants ; les deux suivantes
+  reprennent le même plan, corrigé de l'inflation puis en évolutions relatives.</p>
+
+  {{fig:energie_courant|Trait plein pour le prix payé, pointillé pour sa part hors taxes}}
+
+  {{fig:electricite_decomposition|Remonte à 1991, plus loin que le reste du dossier}}
+  {{fig:sansplomb_decomposition}}
+  {{fig:gazole_decomposition}}
+
+  <p>Chaque figure empile trois blocs dont la somme est exactement le prix payé. Pour les
+  carburants, l'accise n'est pas publiée dans l'historique : elle est déduite par
+  <span class="formule">TTC − hors taxes − TVA</span>. Le contrôle tient, la valeur
+  obtenue pour janvier 2005 tombant exactement sur le barème de l'époque, 58,92 c€/l sur
+  le sans-plomb et 41,69 sur le gazole. Pour l'électricité, la TVA n'est pas recalculée à
+  20 % mais mesurée, par l'écart entre le prix hors taxes et le prix hors TVA : les deux
+  taux qui s'y appliquent en font un taux effectif inférieur à 20 %.</p>
+
+  <p>La figure de l'électricité remonte à 1991, plus loin que le reste du dossier : avant
+  2007, Eurostat publiait des prix de consommateurs-types (un tarif appliqué à un profil
+  conventionnel plutôt qu'une moyenne de contrats souscrits). La verticale marque cette
+  rupture de définition ; les deux périodes ne sont pas raccordées. On y voit seize ans de
+  prix administré stable, puis un doublement en dix-huit ans. Les derniers
+  mois, qu'Eurostat ne couvre pas encore, sont pris au tarif réglementé publié par la CRE,
+  et la TVA y est déduite au taux en vigueur.</p>
+
+  <p>Le prix au kilowattheure n'est d'ailleurs pas le même pour tous : l'abonnement étant
+  fixe, il pèse d'autant plus lourd que la consommation est faible. La tranche retenue
+  partout ailleurs dans ce dossier décrit un profil de ménage parmi d'autres.</p>
+
+  {{fig:electricite_bandes_consommation}}
+
+  <h3>Le coût brut décomposé</h3>
+  <p>Le hors-taxes est lui-même un agrégat : pour les carburants le pétrole brut, le
+  raffinage et l'acheminement jusqu'à la pompe ; pour l'électricité, la fourniture et le
+  réseau. C'est là que se logent les chocs de marché.</p>
+
+  <p>Côté carburants, les trois composantes viennent de trois producteurs différents et
+  sont ramenées au litre chacune à sa façon : le Brent en euros par baril publié par
+  l'INSEE, la marge brute de raffinage publiée par la DGEC en euros par tonne et convertie
+  par la densité, le transport-distribution connu en moyenne annuelle seulement et
+  appliqué tel quel à chaque mois de l'année. Le cours du brut lui-même est converti en
+  euros par l'INSEE, pas recalculé ici.</p>
+
+  {{fig:electricite_hors_taxes}}
+  {{fig:sansplomb_hors_taxes}}
+  {{fig:gazole_hors_taxes}}
+  {{fig:brent}}
+
+  <p>Sur les carburants, le trait noir est le prix hors taxes tel
+  qu'il est mesuré, le pointillé la somme du brut, du raffinage et de l'acheminement. Les
+  deux devraient coïncider. Ils s'écartent de <strong>+5,4 c€/l en moyenne, soit 9 % du
+  hors-taxes</strong> sur le sans-plomb, et jusqu'à 23 % certains mois.</p>
+
+  <p>Cet écart vient de ce que <strong>les trois sources ne se recollent pas</strong>. Un baril ne produit pas 159 litres d'essence mais
+  un panier de produits, si bien qu'attribuer le coût du brut au prorata du volume suppose
+  un rendement de 100 % ; la marge de raffinage publiée est théorique et porte sur ce même
+  panier, pas sur le carburant considéré ; l'acheminement n'est connu qu'en moyenne
+  annuelle. Nous conservons donc le pointillé plutôt que de le faire disparaître : il
+  mesure ce que cette décomposition ne sait pas expliquer.</p>
+
+  <p>L'électricité offre le contre-exemple, deux figures plus haut : le trait noir et le
+  pointillé s'y confondent, à 0,1 c€/kWh près. Eurostat y publie une ventilation
+  comptable, là où les carburants demandent une reconstitution à partir de trois
+  producteurs différents.</p>
+
+  <h4>Ce qui reste quand on retire le brut et le raffinage</h4>
+  <p>Le sans-plomb et le gazole partagent le même baril et la même marge de raffinage
+  publiée. Ce qui reste de leur prix hors taxes une fois ces deux postes retirés couvre
+  l'acheminement, la distribution, les marges, et tout ce que la décomposition ne sait pas
+  attribuer. Si les deux restes divergent, la cause est en aval de la raffinerie.</p>
+
+  {{fig:solde_compare}}
+
+  <p>Ils se suivent de 2015 à 2025, puis le gazole décroche : son reste gagne
+  <strong>15,5 c€/l</strong> entre 2025 et 2026, contre 2,3 pour le sans-plomb, avec une
+  pointe à 61 c€/l en avril 2026. Le brut et le raffinage, eux, progressent à l'identique
+  pour les deux carburants. C'est aussi l'année où le gazole repasse au-dessus du
+  sans-plomb à la pompe, de 10,8 c€/l, comme en 2022, alors qu'il lui était inférieur de
+  6 à 9 centimes de 2023 à 2025.</p>
+
+  <p>Nous n'avons pas de quoi trancher entre les explications possibles : une prime sur le
+  gazole européen, ou un écart entre la cotation de référence et le produit réellement
+  vendu en France. Il faudrait les cotations produit par produit.</p>
+
+  {{limite}}
+  <p><strong>Correction appliquée : la remise carburant de 2022.</strong> D'avril à
+  décembre 2022, l'État a versé une aide de 8 à 25 c€/l hors TVA selon les mois (colonne
+  <code>remise_2022</code> des fichiers carburants). Les
+  sources la comptabilisent en réduction du <em>prix hors taxes</em>, alors qu'elle relève
+  de l'accise. Le prix payé reste juste, mais le hors-taxes s'en trouve creusé pendant neuf
+  mois, au point de tomber sous le coût du seul pétrole brut en septembre et octobre, ce
+  qui est impossible. Nous rebasculons donc la remise vers l'accise, au prorata des jours
+  couverts par chaque barème. Le prix payé ne bouge pas d'un centième, et la dispersion du
+  reste est divisée par deux sur le sans-plomb.</p>
+  {{/limite}}
+
+  <h3>Les taxes décomposées</h3>
+  <p>La première figure donne la part que la fiscalité représente dans le prix payé : exprimée en
+  pourcentage, c'est la seule grandeur qui se compare directement entre un litre et un
+  kilowattheure. Elle ne dépend pas de l'unité monétaire, et n'apparaît donc qu'ici. Pour
+  les carburants, elle additionne l'accise déduite et la TVA ; pour l'électricité, c'est
+  l'écart entre le prix hors toutes taxes et le prix payé.</p>
+
+  {{fig:part_taxes}}
+
+  <p>En montant, la fiscalité compte deux étages : une taxe assise sur le volume (accise
+  TICPE sur les carburants, accise sur l'électricité) puis la TVA appliquée par-dessus,
+  y compris sur cette taxe. C'est ici que se lisent les décisions publiques, une accise se
+  changeant par décision là où un prix de marché ne se décrète pas.</p>
+
+  {{fig:electricite_taxes}}
+  {{fig:sansplomb_taxes}}
+  {{fig:gazole_taxes}}
+
+  <p>Sur un même axe, l'écart de fiscalité entre les deux carburants se lit d'un coup
+  d'œil. Sa réduction entre 2014 et 2018 a ramené l'avantage de prix du gazole à la
+  pompe d'une vingtaine de centimes par litre à moins de dix en euros courants, sans
+  l'inverser.</p>
+
+  {{fig:accises_comparees|La zone grise est l'écart d'accise entre les deux carburants}}
+
+  <p>Pour l'électricité seule, Eurostat publie le détail de ces taxes. On y voit
+  l'effondrement de l'accise en 2023 (de 3,19 à 0,11 c€/kWh sous l'effet du bouclier
+  tarifaire) que l'agrégat ci-dessus ne laisse pas voir. Les carburants n'ont pas
+  d'équivalent : la TICPE n'est publiée qu'en un seul montant.</p>
+
+  <p>La figure suivante ne couvre pas la même période que la précédente : les montants
+  agrégés courent de 2007 à 2026 au mois, le détail de 2017 à 2025 à l'année. Les deux
+  concordent néanmoins : l'écart entre leurs totaux est de 0,02 c€/kWh en moyenne.</p>
+
+  {{fig:electricite_taxes_detail}}
+</section>
+
+<section id="inflation">
+  <h2>L'impact de l'inflation</h2>
+  <p class="chapo">Le même plan, aux mêmes échelles, mais déflaté par l'indice des prix à
+  la consommation et exprimé au pouvoir d'achat d'août 2026. Comparer cette section à la
+  précédente, figure par figure, revient à retrancher l'inflation de chaque composante.</p>
+
+  {{fig:energie_constant}}
+
+  {{fig:electricite_decomposition_constants}}
+  {{fig:sansplomb_decomposition_constants}}
+  {{fig:gazole_decomposition_constants}}
+
+  <h3>Le coût brut décomposé</h3>
+  <p>L'acheminement des carburants passe de 10 à 26 c€/l en euros courants ; ici la pente
+  est bien plus douce, une partie de cette hausse n'étant que de l'inflation.</p>
+
+  {{fig:electricite_hors_taxes_constants}}
+  {{fig:sansplomb_hors_taxes_constants}}
+  {{fig:gazole_hors_taxes_constants}}
+  {{fig:brent_constants}}
+
+  <p>Les figures ci-dessus décomposent le hors-taxes poste par poste, et laissent un écart
+  de bouclage que personne ne sait affecter. Une autre voie existe : retrancher le seul
+  coût du brut au prix hors taxes, et appeler « aval » tout ce qui reste, raffinage
+  et logistique et marges confondus. Une soustraction entre deux séries publiées ne passe
+  ni par la série annuelle de transport-distribution, ni par un résidu, et elle vaut sur
+  toute la période plutôt que depuis 2015.</p>
+
+  {{fig:aval_petrolier|Prix hors taxes moins coût du brut, sur les deux carburants}}
+  {{fig:solde_compare_constants|Le solde après brut et raffinage, déflaté}}
+
+  <h3>Les taxes décomposées</h3>
+  <p>Une accise est un montant fixe par litre : elle ne suit pas l'inflation tant qu'une
+  décision ne la relève pas. En euros constants, une accise inchangée décroît donc
+  mécaniquement, ce que la section précédente, en euros courants, ne peut pas montrer.</p>
+
+  {{fig:electricite_taxes_constants}}
+  {{fig:sansplomb_taxes_constants}}
+  {{fig:gazole_taxes_constants}}
+  {{fig:accises_comparees_constants}}
+
+  <p>En euros constants, l'écart passe de 24,5 centimes par litre en 2005 à 6,4
+  aujourd'hui, par une décroissance qui ne s'inverse jamais sur vingt-deux ans.</p>
+</section>
+
+<section id="glossaire">
+  <h2>Glossaire</h2>
+  <p class="chapo">Les termes employés dans les graphiques et les tableaux de sources,
+  dans l'ordre où ils apparaissent dans un prix.</p>
+
+  <dl class="glossaire">
+    <div><dt>TTC</dt><dd>Prix final payé par le ménage, toutes taxes comprises.</dd></div>
+    <div><dt>HTT / hors taxes</dt><dd>Prix hors toutes taxes : ce que coûte l'énergie avant
+      toute fiscalité : matière première, transformation, acheminement, marges.</dd></div>
+    <div><dt>Accise (ex-TICPE)</dt><dd>Taxe intérieure de consommation sur les produits
+      énergétiques. Montant fixe par litre, indépendant du prix du pétrole. Sur
+      l'électricité, son équivalent est l'accise sur l'électricité (ex-CSPE, puis
+      TICFE).</dd></div>
+    <div><dt>TVA</dt><dd>Appliquée par-dessus le prix accise comprise : on paie donc de la
+      TVA sur la taxe. Sur l'électricité, l'abonnement est taxé à 5,5 % et la seule
+      consommation à 20 %, si bien que le taux effectif est inférieur à 20 %.</dd></div>
+    <div><dt>TURPE</dt><dd>Tarif d'utilisation des réseaux publics d'électricité. Ce que
+      coûte l'acheminement du courant jusqu'au compteur : transport haute tension et
+      distribution locale. Fixé par la Commission de régulation de l'énergie, il ne dépend
+      pas du fournisseur choisi.</dd></div>
+    <div><dt>TRV</dt><dd>Tarif réglementé de vente. Barème fixé par les pouvoirs publics
+      sur avis de la CRE, qui change à date connue. À distinguer du prix moyen de marché,
+      qui mélange tarif réglementé et offres concurrentes.</dd></div>
+    <div><dt>Fourniture</dt><dd>La part du prix de l'électricité qui rémunère l'énergie
+      elle-même et sa commercialisation. C'est la seule composante ouverte à la
+      concurrence.</dd></div>
+    <div><dt>Brent daté</dt><dd>Cours de référence du pétrole brut en mer du Nord, en
+      dollars par baril (159 litres). Sert de base aux cotations des produits
+      raffinés.</dd></div>
+    <div><dt>Marge de raffinage</dt><dd>Écart entre la valeur des produits sortis de
+      raffinerie et le coût du brut entré. Indicateur théorique, calculé sur un panier de
+      produits, pas sur un carburant précis.</dd></div>
+    <div><dt>Transport-distribution</dt><dd>Coût d'acheminement du carburant de la
+      raffinerie à la pompe, marge de la station comprise. Publié en moyenne
+      annuelle.</dd></div>
+    <div><dt>Bande de consommation</dt><dd>Tranche de consommation annuelle servant à
+      publier un prix moyen de l'électricité. Celle retenue ici, de 2 500 à 4 999 kWh,
+      correspond à un logement sans chauffage électrique.</dd></div>
+    <div><dt>IPC</dt><dd>Indice des prix à la consommation, INSEE. Le déflateur employé
+      dans tout ce dossier pour passer des euros courants aux euros constants.</dd></div>
+    <div><dt>Euros constants</dt><dd>Prix corrigé de l'inflation, exprimé au pouvoir
+      d'achat d'un mois de référence, ici août 2026. Un prix en euros constants est un
+      prix courant divisé par la courbe ci-dessous.</dd></div>
+  </dl>
+
+  {{fig:inflation|Le déflateur employé dans tout le dossier}}
+</section>
+
+<section id="sources">
+  <h2>Sources et limites</h2>
+  <p class="chapo">Chaque série, son producteur et la définition exacte de ce qu'elle
+  mesure : deux séries d'apparence semblable peuvent ne pas mesurer la même chose.</p>
+
+  {{sources}}
+
+  <h3>Contrôle : les sources se recoupent-elles ?</h3>
+  <p>Cinq grandeurs de ce dossier sont mesurées par deux chemins indépendants. Tant que
+  les deux concordent, la chaîne se valide elle-même ; là où ils divergent, la figure dit
+  de combien et depuis quand. Le Brent, obtenu de l'INSEE et de la DGEC, concorde à
+  <strong>0,6 %</strong> ; l'électricité, d'Eurostat et de la CRE, à <strong>2,5 %</strong>.
+  La reconstitution du hors-taxes des carburants, elle, décroche de <strong>9 %</strong> :
+  c'est l'écart commenté plus haut. Zéro signifie que les deux sources donnent le même
+  chiffre ; un écart durable signale une définition différente, pas nécessairement une
+  erreur.</p>
+
+  {{fig:controle_sources}}
+
+  <h3>Ruptures, lacunes et conventions</h3>
+  <p>Journal des anomalies relevées pendant la construction : ce qui est indisponible, ce
+  qui change de définition en cours de route, et les conventions retenues.</p>
+
+  {{notes}}
+</section>
+
+<section id="annexe">
+  <h2>Annexe : ce qui remonte avant 2005</h2>
+  <p class="chapo">Le dossier commence en 2005 parce que c'est la première année où les
+  prix des carburants sont publiés. Trois séries remontent pourtant bien plus haut :
+  l'inflation et le Brent depuis 1990, l'électricité depuis 1991. Leurs unités n'ayant
+  rien de comparable, seule une base commune permet de les regarder ensemble.</p>
+
+  {{fig:serie_longue|Inflation, Brent et électricité depuis 1991}}
+
+  <p>Deux repères sur cette figure. Le trait gris marque le début du dossier, où les
+  carburants apparaissent. Le trait noir marque 2007, où l'électricité change de
+  définition : avant, un tarif appliqué à un profil conventionnel ; après, une moyenne
+  des contrats souscrits. Les deux périodes sont mises bout à bout, sans raccord.</p>
+
+  <p>On y lit ce qu'aucune autre figure ne montre : entre 1991 et 2005, l'électricité
+  suit à peu près l'inflation, quand le Brent fait déjà le grand écart.</p>
+</section>
+
+<section id="verification">
+  <h2>Annexe : vérification sur les douze derniers mois</h2>
+  <p>Les deux figures suivantes posent côte à côte, mois par mois et en euros par litre,
+  tout ce qui compose le prix : les trois postes reconstitués et leur somme, le prix hors
+  taxes réellement publié, les deux étages de fiscalité, et le prix payé. Aucune autre taxe
+  que l'accise et la TVA ne pèse sur les carburants. C'est une figure de contrôle : si le
+  trait noir ne tombe pas sur le prix affiché à la pompe, la décomposition est fausse
+  quelque part.</p>
+
+  <p>La fenêtre est de douze mois glissants, non d'année civile : une figure « année en
+  cours » n'aurait qu'un ou deux points en janvier, et sa lecture changerait de nature au
+  fil des mois.</p>
+
+  {{fig:zoom_12m_sansplomb}}
+  {{fig:zoom_12m_gazole}}
+
+  <p>Le pointillé ne signale qu'une chose : une valeur reconstituée. Deux séries en
+  portent. Le <strong>pétrole brut</strong> sur août et septembre : août vient du cours
+  DGEC en dollars converti au taux du mois précédent, l'INSEE publiant ses euros avec un
+  mois de retard ; septembre est repris de la note hebdomadaire, qui n'en donne qu'une
+  moyenne de semaine et non de mois. Le <strong>transport-distribution</strong> de janvier
+  à juillet, où la moyenne annuelle de 2025 est reconduite faute de mieux, avant de passer
+  en trait plein sur août et septembre, où la cotation du mois permet enfin de le
+  mesurer.</p>
+
+  <p>Une conséquence utile de ces compléments : le pétrole brut vaut 67,5 c€/l en
+  septembre pour les deux carburants, comme il se doit puisque c'est le même baril. Ce
+  qui les sépare est en aval : 19,3 c€/l de raffinage sur le sans-plomb contre 21,6 sur
+  le gazole, et 21,4 d'acheminement contre 23,4.</p>
+
+  <h4>D'où vient la variabilité du prix</h4>
+  <p>Huit courbes superposées disent mal lequel de ces postes bouge et lequel reste
+  immobile. La figure suivante le montre directement : chaque poste y est résumé par la
+  dispersion de ses douze derniers mois, les deux carburants côte à côte.</p>
+
+  {{fig:postes_dispersion}}
+
+  <p>Le pétrole brut occupe la boîte la plus haute des composantes, le raffinage une boîte
+  basse mais étalée avec des points aberrants qui sont ses pics de tension. L'accise, elle,
+  se réduit à un trait : elle n'a pas varié d'un centime en douze mois, sur aucun des deux
+  carburants. La TVA suit proportionnellement, sans rien décider.</p>
+
+  <p>Le losange marque le dernier mois connu. Sur le brut comme sur le raffinage, il se
+  place au sommet de la distribution, et se confond alors avec la moustache haute :
+  septembre 2026 est le mois le plus haut de cette fenêtre.</p>
+
+  <p>Sous chaque poste figure la granularité de sa source, et elle commande la lecture.
+  Le brut et le raffinage sont publiés au mois, donc leur dispersion est une vraie
+  variation de marché. L'acheminement est annuel et reconduit : la sienne est pour
+  l'essentiel méthodologique. L'accise est un barème et non une mesure : sa boîte plate
+  traduit un montant inchangé. La TVA est calculée, elle n'a pas de variabilité propre.
+  <strong>Les dispersions ne se comparent donc pas d'un poste à l'autre</strong> ; seule
+  la comparaison sans-plomb / gazole au sein d'un même poste est légitime, puisque la
+  source y est identique.</p>
+
+  <p>Autre limite, propre aux données : cette dispersion est inter-mensuelle.
+  Elle dit de combien chaque poste varie d'un mois à l'autre, non de combien il varie à
+  l'intérieur d'un mois. Les composantes n'étant publiées qu'au mois, c'est le grain le
+  plus fin disponible.</p>
+
+  <h4>Le prix se construit étage par étage</h4>
+  <p>La figure suivante cumule les postes de gauche à droite, chacun avec sa dispersion
+  sur les douze mêmes mois. Elle répond à une question que ni les courbes ni la figure
+  précédente ne traitent : à quel étage la variabilité entre dans le prix.</p>
+
+  {{fig:cascade_couts}}
+
+  <p>La forme des boîtes se lit autant que leur hauteur. De <strong>Pétrole brut</strong> à
+  <strong>+ Raffinage</strong>, la boîte monte et s'élargit : le raffinage ajoute du coût
+  et de l'instabilité. De <strong>+ Acheminement</strong> à <strong>+ Accise</strong>, elle
+  monte de soixante centimes sans s'élargir : un montant fixe pèse lourd mais n'explique
+  aucune variation. La
+  <strong>TVA</strong>, proportionnelle, réélargit ce qu'elle surmonte sans rien décider
+  elle-même.</p>
+
+  <p>L'avant-dernier étage est le prix réellement payé, à comparer au prix reconstitué qui
+  le précède : leur écart est ce que la décomposition ne sait pas expliquer. Il est faible
+  sur le sans-plomb, plus marqué sur le gazole, ce qui retrouve par un autre chemin le
+  décrochage de 2026.</p>
+
+  <h4>Ce que la moyenne nationale ne dit pas</h4>
+  <p>Le dernier étage, à droite du pointillé, change de nature :
+  il disperse non plus douze mois mais <strong>huit mille stations</strong>, chacune avec
+  son dernier prix déclaré sur une fenêtre de sept jours.
+  Toutes les autres séries de ce dossier sont des moyennes nationales, et aucune ne peut
+  donc rien dire de l'écart entre deux pompes.</p>
+
+  <p>Cet écart atteint <strong>94 centimes par litre</strong> sur le gazole, de 1,99 € à la
+  station la moins chère à 2,93 € à la plus chère. Sur un plein de 50 litres, cela fait
+  47 € de différence pour le même carburant à la même période, soit plusieurs fois ce que
+  le prix national a parcouru en un an. La moitié centrale des stations se tient pourtant dans
+  une fourchette de neuf centimes : l'écart vient des stations extrêmes.</p>
+
+  <p>Point de méthode : le flux est dit « instantané », mais chaque station
+  y figure avec la date de son propre dernier relevé : deux tiers datent du jour même, neuf
+  sur dix de moins d'une semaine, et la queue remonte à plus d'un an, une station qui cesse
+  de déclarer gardant son ancien prix au catalogue. Sans filtrage, le prix le plus bas de
+  France serait celui d'une pompe muette depuis treize mois. Nous écartons donc les relevés
+  de plus de sept jours, ainsi que ceux qui s'éloignent de plus de 30 % de la médiane de
+  leur carburant. Les quartiles n'en bougent pas d'un millième ; seuls les relevés
+  périmés disparaissent.</p>
+
+  {{limite}}
+  <p>Cette dernière boîte ne se compare pas à la médiane des douze mois, mais au losange
+  qui marque le dernier mois connu. À date égale, les deux sources, relevés DGEC et
+  déclarations des stations, s'accordent à deux centimes près, ce qui les valide
+  mutuellement. Comparer la dispersion géographique d'un jour à la dispersion temporelle
+  d'une année n'aurait en revanche aucun sens.</p>
+  {{/limite}}
+
+  <p>L'écart entre le trait gris plein et le pointillé est le même que plus haut, mais on
+  le lit ici en valeur : sur le gazole de juillet, 1,10 € de hors-taxes publié contre 0,89 €
+  reconstitué. En septembre au contraire, la décomposition tombe juste au centième de
+  centime près, parce que les cotations du mois sont connues : 87,87 c€/l de cotation plus
+  21,43 d'acheminement font exactement les 109,30 c€/l de hors-taxes publiés pour le
+  sans-plomb, et le prix payé se retrouve à l'identique une fois l'accise et la TVA
+  ajoutées.</p>
+</section>
+
+<section id="barres">
+  <h2>Annexe : le prix en barres annuelles</h2>
+  <p class="chapo">Les mêmes décompositions que plus haut, agrégées à l'année et empilées.
+  Chaque bloc porte sa valeur et la somme est exactement le prix payé, ce que le tracé
+  mensuel ne permet pas ; on y perd en revanche le détail des à-coups.</p>
+
+  <p>Le bloc hors taxes y est ouvert aussi loin que les sources le permettent. Les
+  nuances de bleu sont ses postes, l'orange et le vert restent la fiscalité : la lecture
+  en trois familles est la même que dans tout le dossier. Le dernier poste bleu est un
+  solde, pris par différence avec le prix hors taxes mesuré : c'est ce qui fait que la
+  pile tombe juste, là où les composantes publiées, venues de producteurs différents, ne
+  bouclent pas exactement.</p>
+
+  <p>Les années où le détail n'est pas publié gardent un bloc unique,
+  <strong>Production et acheminement</strong>, plutôt qu'une ventilation inventée : la
+  marge de raffinage des carburants n'est publiée qu'à partir de 2015, et la ventilation
+  du prix de l'électricité entre fourniture et réseau qu'à partir de 2017.</p>
+
+  {{fig:electricite_barres}}
+  {{fig:sansplomb_barres}}
+  {{fig:gazole_barres}}
+  {{fig:electricite_barres_constants}}
+  {{fig:sansplomb_barres_constants}}
+  {{fig:gazole_barres_constants}}
+
+  <p>Les mêmes piles, chaque année ramenée à cent, disent ce que les centimes cachent :
+  un poste peut rester stable en valeur et perdre du terrain si le prix monte autour de
+  lui. Les taxes hors TVA passent ainsi de 51 % du prix payé en 2005 à 36 % aujourd'hui,
+  quand la TVA ne bouge pas d'un point.</p>
+
+  {{fig:sansplomb_barres_part}}
+  {{fig:gazole_barres_part}}
+
+  <h3>Le détail Eurostat de l'électricité</h3>
+  <p>Pour la seule électricité et à partir de 2017, Eurostat publie une ventilation
+  complète, coûts et taxes confondus, dont la somme est le prix payé.</p>
+
+  {{fig:electricite_composantes}}
+</section>

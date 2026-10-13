@@ -1,0 +1,80 @@
+<section id="entree">
+  <h2>Trois façons d'entrer</h2>
+  <p class="chapo">Ce travail reconstitue, poste par poste, ce que les ménages français
+  paient pour un litre de carburant et un kilowattheure depuis 2005. Tout vient de
+  sources publiques, et tout se recalcule.</p>
+
+  <p><strong><a href="synthese.html">La synthèse</a></strong> fait seize cents mots et
+  six figures. Elle répond à une question simple : si le carburant n'a jamais coûté
+  autant d'euros, à cause de quoi ?</p>
+
+  <p><strong><a href="prix_energie.html">Le dossier complet</a></strong> porte cinquante
+  figures, le détail de chaque série, de son producteur et de sa définition, les trous
+  dans les données et les conventions retenues. C'est la pièce à consulter pour
+  vérifier une affirmation de la synthèse.</p>
+
+  <p><strong>Les données</strong> sont les fichiers CSV déposés à côté de cette page :
+  une série par fichier, en UTF-8, séparateur virgule, dates ISO. Ce sont exactement
+  celles qui produisent les figures.</p>
+</section>
+
+<section id="donnees">
+  <h2>Les fichiers</h2>
+
+  <p>Les prix mensuels décomposés, un fichier par carburant :
+  <a href="carburants_sansplomb_mensuel.csv">sans-plomb</a>,
+  <a href="carburants_gazole_mensuel.csv">gazole</a>,
+  <a href="carburants_sp95_e5_mensuel.csv">SP95-E5</a> et
+  <a href="carburants_sp95_e10_mensuel.csv">SP95-E10</a>. Chacun porte le prix payé, le
+  prix hors taxes, l'accise, la TVA, le coût du brut et celui du raffinage, en euros
+  courants et en euros constants.</p>
+
+  <p>L'électricité : <a href="electricite_mensuel_prolonge.csv">la série mensuelle</a>,
+  <a href="electricite_composantes_annuel.csv">les composantes annuelles d'Eurostat</a>,
+  <a href="electricite_trv.csv">les barèmes successifs du tarif réglementé</a>.</p>
+
+  <p>Les entrées communes : <a href="brent_mensuel.csv">le Brent</a>,
+  <a href="ipc_mensuel.csv">l'indice des prix à la consommation</a> qui sert de
+  déflateur, <a href="marge_raffinage_mensuel.csv">la marge de raffinage</a>,
+  <a href="transport_distribution_annuel.csv">le coût de transport-distribution</a>,
+  <a href="carburants_prix_par_station.csv">les prix relevés station par station</a> et
+  <a href="cout_100km_mensuel.csv">le coût de cent kilomètres par motorisation</a>.</p>
+
+  <p>Deux fichiers tiennent la traçabilité :
+  <a href="_sources.csv">la liste des producteurs</a> avec leurs URL, et
+  <a href="_notes.csv">le journal</a> des ruptures de définition, des indisponibilités
+  et des conventions appliquées pendant le calcul. Ils se lisent aussi, mis en forme, à
+  la fin du dossier complet.</p>
+</section>
+
+<section id="methode">
+  <h2>Ce que ce travail ne peut pas dire</h2>
+
+  <p>La marge de raffinage est publiée en un seul chiffre et non par carburant : sur le
+  gazole, séparer ce qui revient au raffineur de ce qui revient au distributeur est hors
+  de portée de ces données.</p>
+
+  <p>L'accise n'est pas lue au barème mais déduite par solde, ce qui la rend sensible à
+  toute erreur sur le couple hors-taxes et prix payé. Le coût de transport-distribution
+  est publié à l'année et reconduit en cours d'année.</p>
+
+  <p>Les prix sont des moyennes nationales hors Corse. L'écart entre stations, le même
+  jour et pour le même carburant, dépasse plusieurs fois ce que la moyenne nationale
+  parcourt en un an.</p>
+
+  <p>Ces limites sont reprises à leur place dans le dossier, là où elles pèsent sur une
+  conclusion.</p>
+</section>
+
+<section id="code">
+  <h2>Le code</h2>
+
+  <p>Le dépôt contient le programme qui télécharge les sources, les contrôle, les
+  décompose et dessine les figures. Il comporte trois garde-fous : un contrat
+  par source, qui refuse un fichier dont la structure a changé ; une comparaison avant
+  écriture, qui refuse d'écraser un CSV dont la nouvelle version perdrait des lignes ;
+  et un catalogue des figures, qui arrête la construction si l'une d'elles manque.</p>
+
+  <p>Relancer l'ensemble demande une commande. Les séries se mettent à jour quand leurs
+  producteurs publient.</p>
+</section>

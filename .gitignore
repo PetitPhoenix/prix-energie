@@ -1,0 +1,20 @@
+# Caches, environnements et artefacts d installation
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.cache_prix_energie/
+
+# Artefacts régénérables : le classeur se reconstruit depuis les CSV, et les CSV
+# depuis les sources. Seul le site publié dans docs/ est versionné, parce que
+# c'est lui que GitHub Pages sert.
+*.xlsx
+
+# Travail en cours, jamais poussé : brouillons, essais, notes de passage
+_work/
+
+# Le site est derive : la forge le reconstruit depuis data/ a chaque poussee.
+# Le versionner ferait entrer sept megaoctets de figures dans l historique a
+# chaque mise a jour mensuelle, alors qu elles se regenerent a l identique.
+site/

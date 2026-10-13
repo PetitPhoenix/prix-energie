@@ -1,0 +1,30 @@
+[project]
+name = "prix-energie"
+version = "0.1.0"
+description = "Décomposition des prix de l'énergie en France depuis 2005, à partir des sources publiques"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.2",
+    "matplotlib>=3.8",
+    "requests>=2.31",
+    "pdfplumber>=0.11",
+    "openpyxl>=3.1",
+    "Pillow>=10.0",
+    "lxml>=5.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["ignore::UserWarning"]
+addopts = "-ra --strict-markers"

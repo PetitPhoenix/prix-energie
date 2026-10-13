@@ -1,0 +1,57 @@
+Type,Série,Message
+METHODE,WOB,37 observation(s) manquante(s) dans la source (pas W).
+DEFINITION,WOB,"Euro-super 95 déclaré par la France = SP95 (E5). Prix du lundi, moyenne nationale pondérée déclarée par la DGEC ; la base DGEC publie des prix du vendredi : les deux ne coïncident pas exactement semaine à semaine."
+METHODE,WOB,L'accise n'est pas publiée dans l'historique : elle est déduite par accise = TTC − HT − TVA avec TVA = TTC × t/(1+t). Elle intègre donc la moyenne des modulations régionales et les arrondis de la moyenne nationale.
+INDISPONIBLE,Carburants avant 2005,"Le Weekly Oil Bulletin commence en 2005. Les prix 1985→2004 (HT et TTC) sont dans la base en ligne de la DGEC, sans fichier téléchargeable : exporter la base (tuto sur la page Prix des produits pétroliers) et la passer avec --dgec-base ; elle devient alors la source primaire sur toute la période."
+RUPTURE,Marge raffinage,La DGEC a modifié le mode de calcul de l'indicateur ; l'historique publié commence en 2015 (nouvelle méthode). Pas de série officielle comparable avant 2015 : composante indisponible.
+METHODE,Brent,Euros par baril reconstitués pour 2026-08 à partir du cours DGEC en dollars et du taux de change du dernier mois commun (1.1415 $/€). L'INSEE publie les euros avec un mois de retard sur la DGEC.
+RUPTURE,IPC,Raccord base 2025 → base 2015 par coefficient 1.209605 (mois de recouvrement 2025-12).
+METHODE,Euros constants,Valeur constante = valeur courante × IPC(mois de référence) / IPC(mois). Le mois de référence se choisit avec --ipc-ref ; par défaut le dernier mois d'IPC disponible.
+METHODE,Prix par station,"Relevés écartés : sansplomb : 0 hors bornes, 850 périmés, 0 aberrants ; gazole : 0 hors bornes, 951 périmés, 1 aberrants ; sp98 : 0 hors bornes, 1123 périmés, 0 aberrants ; e85 : 0 hors bornes, 743 périmés, 60 aberrants. Seuil de fraîcheur 7 jours ; écart maximal à la médiane 30%."
+DEFINITION,Prix par station,"Dispersion géographique sur une fenêtre de quelques jours, et non évolution dans le temps : ces prix ne se comparent pas aux moyennes nationales mensuelles du dossier, ils en montrent l'étalement."
+PROVISOIRE,Cotations Rotterdam (NPG),Les mois marqués provisoires n'ont été vus que comme 'mois en cours' d'une note.
+METHODE,Marge de raffinage,"2 mois de marge brute lus dans les notes hebdomadaires (2026-08 → 2026-09), en €/t, pour prolonger la série mensuelle DGEC au-delà de sa dernière publication."
+PROVISOIRE,Brent,"Cours en euros repris des notes hebdomadaires pour 2026-09 : c'est une moyenne de semaine, pas de mois, en attendant la publication mensuelle."
+METHODE,Gazole,"Prix DGEC (vendredi) substitués au Weekly Oil Bulletin (lundi) à partir de 2020-01, pour aligner le gazole sur le sans-plomb. Contrôle sur 81 mois communs : écart moyen +0.12 c€/l, écart maximal 7.32 c€/l."
+METHODE,Gazole,"Remise carburant 2022 reversée au prix hors taxes sur 9 mois (15 c€/l d'avril à août, 25 jusqu'au 15 novembre, 8,33 ensuite). Les sources la déduisent du hors-taxes ; elle relève de l'accise, sans quoi le hors-taxes passe sous le coût du brut en septembre."
+METHODE,Gazole,6 variation(s) mensuelle(s) d'accise supérieure(s) à 5 c€/l : changement de barème ou remise à la pompe (à confirmer au cas par cas).
+METHODE,SP95-E5,"Remise carburant 2022 reversée au prix hors taxes sur 9 mois (15 c€/l d'avril à août, 25 jusqu'au 15 novembre, 8,33 ensuite). Les sources la déduisent du hors-taxes ; elle relève de l'accise, sans quoi le hors-taxes passe sous le coût du brut en septembre."
+METHODE,SP95-E5,5 variation(s) mensuelle(s) d'accise supérieure(s) à 5 c€/l : changement de barème ou remise à la pompe (à confirmer au cas par cas).
+METHODE,SP95-E10,"Remise carburant 2022 reversée au prix hors taxes sur 9 mois (15 c€/l d'avril à août, 25 jusqu'au 15 novembre, 8,33 ensuite). Les sources la déduisent du hors-taxes ; elle relève de l'accise, sans quoi le hors-taxes passe sous le coût du brut en septembre."
+METHODE,SP95-E10,5 variation(s) mensuelle(s) d'accise supérieure(s) à 5 c€/l : changement de barème ou remise à la pompe (à confirmer au cas par cas).
+RUPTURE,Sans-plomb,Chaînage SP95-E5 → SP95-E10 en 2020-01 : écart TTC E10 − E5 ce mois-là (source DGEC) = -2.16 c€/l.
+DEFINITION,Sans-plomb,"Le SP95-E10 est commercialisé depuis avril 2009 ; la DGEC ne publie en xlsx l'E10 que depuis 2020 (sa base en ligne remonte à 2009). Avant la date de chaînage, la série est le SP95-E5 (Weekly Oil Bulletin) ; l'accise E10 était inférieure à celle de l'E5 jusqu'en 2021, les composantes ne sont donc pas strictement comparables de part et d'autre du chaînage."
+DEFINITION,Eurostat nrg_pc_204,"'Hors taxes' = énergie + fourniture + réseau. 'Hors TVA' − 'hors taxes' = taxes et contributions hors TVA (TCFE/accise, CSPE avant 2016, CTA…). 'TTC' − 'hors TVA' = TVA. Décomposition fourniture/réseau indisponible dans ce jeu."
+INDISPONIBLE,Électricité fourniture/réseau,"Décomposition fourniture / réseau publiée par Eurostat seulement depuis 2017 (règlement UE 2016/1952). Avant 2017 : seuls les trois niveaux (hors taxes, hors TVA, TTC) sont disponibles."
+RUPTURE,Électricité,2007 : passage des consommateurs-types (ancienne méthode) aux prix moyens par bande de consommation (directive 2008/92/CE puis règlement 2016/1952). Les deux séries ne sont pas directement raccordables ; elles sont présentées côte à côte.
+METHODE,TRV CRE,"Prix moyen = part variable + part fixe / 3500 kWh (consommation de référence, choix méthodologique). HT = hors toutes taxes et contributions (fourniture + réseau + CTA non séparables ici) ; TTC − HT = TCFE/accise + CTA + TVA, non séparables avec ce jeu de données."
+INDISPONIBLE,TRV CRE,Pas de série CRE en open data avant 2012. La décomposition officielle fourniture/réseau/taxes du TRV figure dans les délibérations tarifaires de la CRE (PDF).
+METHODE,Gazole,"Décomposition du hors-taxes sur 132 mois : écart de bouclage moyen +7.13 c€/l (min +0.86, max +27.26)."
+METHODE,Sans-plomb,"Décomposition du hors-taxes sur 132 mois : écart de bouclage moyen +5.36 c€/l (min -1.04, max +18.29)."
+PROVISOIRE,Sans-plomb,2 mois où brut + raffinage + transport dépassent le prix hors taxes (écart négatif) : marge de raffinage théorique et transport annuel ne collent pas au mois. Concentrés sur les épisodes de tension du raffinage.
+METHODE,SP95-E5,"Décomposition du hors-taxes sur 132 mois : écart de bouclage moyen +5.67 c€/l (min -1.01, max +19.83)."
+PROVISOIRE,SP95-E5,4 mois où brut + raffinage + transport dépassent le prix hors taxes (écart négatif) : marge de raffinage théorique et transport annuel ne collent pas au mois. Concentrés sur les épisodes de tension du raffinage.
+METHODE,SP95-E10,"Décomposition du hors-taxes sur 72 mois : écart de bouclage moyen +6.50 c€/l (min -0.38, max +19.89)."
+PROVISOIRE,SP95-E10,2 mois où brut + raffinage + transport dépassent le prix hors taxes (écart négatif) : marge de raffinage théorique et transport annuel ne collent pas au mois. Concentrés sur les épisodes de tension du raffinage.
+INDISPONIBLE,Gazole,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,Gazole,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+INDISPONIBLE,Sans-plomb,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,Sans-plomb,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+INDISPONIBLE,SP95-E5,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,SP95-E5,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+INDISPONIBLE,SP95-E10,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,SP95-E10,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+METHODE,Électricité semestriel,Déflateur calculé sur l'IPC moyen de chaque période de 6 mois (et non sur l'IPC du seul mois de début).
+METHODE,Électricité semestriel,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+METHODE,Électricité composantes,Déflateur calculé sur l'IPC moyen de chaque période de 12 mois (et non sur l'IPC du seul mois de début).
+METHODE,Électricité composantes,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+METHODE,Électricité bandes,Déflateur calculé sur l'IPC moyen de chaque période de 6 mois (et non sur l'IPC du seul mois de début).
+METHODE,Électricité bandes,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+INDISPONIBLE,Brent,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,Brent,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+RUPTURE,Électricité,"9 mois (2026-01 → 2026-09) pris au tarif réglementé, le prix moyen Eurostat n'étant pas encore publié. Les deux mesures diffèrent de 0,6 % en moyenne sur leur période commune."
+INDISPONIBLE,Électricité mensuelle,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,Électricité mensuelle,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
+METHODE,Coût au km,"Coût de 100 km calculé avec 6.5 l/100 km (essence), 5.5 l/100 km (gazole) et 18 kWh/100 km (électrique, au compteur). Électricité valorisée au prix moyen Eurostat prolongé par le tarif réglementé. Ces consommations sont des conventions : elles fixent les niveaux, pas les évolutions."
+INDISPONIBLE,Coût au km,1 mois sans déflateur (2026-09 → 2026-09) : l'IPC s'arrête en 2026-08. Colonnes en euros constants vides sur ces mois.
+METHODE,Coût au km,Euros constants de 2026-08 : valeur constante = valeur courante x IPC(2026-08) / IPC(mois).
